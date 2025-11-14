@@ -1,0 +1,219 @@
+table 'Intermediate Client Sheets'
+	lineageTag: b6a0ca53-5540-4fba-a9c1-0c235a2a4bfa
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 93b4be61-f66f-4737-b0ec-35505d3ead17
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 55b951ba-4f87-4813-bf3d-d8bd26de4981
+			defaultHierarchy: LocalDateTable_a840f60a-1c5c-4138-8249-2f0bfd9223f7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Workout Split'
+		dataType: string
+		lineageTag: 9890c5ab-e5ce-487a-8a14-cac2463520b8
+		summarizeBy: none
+		sourceColumn: Workout Split
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExerciseAS_1
+		dataType: string
+		lineageTag: b5a38f7f-1687-4d13-8f45-a85c12b6f300
+		summarizeBy: none
+		sourceColumn: ExerciseAS_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExerciseAS_2
+		dataType: string
+		lineageTag: 83ad3641-5e42-4023-93b1-50a1201f9a86
+		summarizeBy: none
+		sourceColumn: ExerciseAS_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExerciseAS_3
+		dataType: string
+		lineageTag: 8934c6b4-274f-4f14-8a2d-7df0b459c3f1
+		summarizeBy: none
+		sourceColumn: ExerciseAS_3
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExerciseAS_4
+		dataType: string
+		lineageTag: 6094f0fe-1aa9-4de6-9a3a-b14f3d7a1b27
+		summarizeBy: none
+		sourceColumn: ExerciseAS_4
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExerciseAS_5
+		dataType: string
+		lineageTag: c7d8bd9a-6a8c-44ec-a6af-e48175ff6d2a
+		summarizeBy: none
+		sourceColumn: ExerciseAS_5
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExerciseEX_1
+		dataType: string
+		lineageTag: 74874199-d728-4214-a525-df40aaae3164
+		summarizeBy: none
+		sourceColumn: ExerciseEX_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExerciseEX_2
+		dataType: string
+		lineageTag: 0b03f5ca-fc40-4f04-ab31-cd2367bd3719
+		summarizeBy: none
+		sourceColumn: ExerciseEX_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExerciseEX_3
+		dataType: string
+		lineageTag: 9141a3c5-928b-4102-9e96-de5c56945316
+		summarizeBy: none
+		sourceColumn: ExerciseEX_3
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExerciseEX_4
+		dataType: string
+		lineageTag: 4742fa12-4610-4181-9f04-b96cc1be6a08
+		summarizeBy: none
+		sourceColumn: ExerciseEX_4
+
+		annotation SummarizationSetBy = Automatic
+
+	column ExerciseEX_5
+		dataType: string
+		lineageTag: d2acb943-9576-4fe1-a110-6b01e208c2ef
+		summarizeBy: none
+		sourceColumn: ExerciseEX_5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Intensity
+		dataType: string
+		lineageTag: 6bf2c970-f7da-495e-a58e-327f981ddab3
+		summarizeBy: none
+		sourceColumn: Intensity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Any New PR?'
+		dataType: string
+		lineageTag: 28a5eca9-c970-49c8-b667-7afaf931e7b3
+		summarizeBy: none
+		sourceColumn: Any New PR?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PR Record'
+		dataType: string
+		lineageTag: dcb611a2-1a09-49f9-b901-983b5d5224ef
+		summarizeBy: none
+		sourceColumn: PR Record
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calorie - Breakfast'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0680394f-62a2-4068-b04a-5f8ffd8c9fe6
+		summarizeBy: sum
+		sourceColumn: Calorie - Breakfast
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calorie - Lunch'
+		dataType: int64
+		formatString: 0
+		lineageTag: 03926847-3f5a-48d3-93d0-e1c148ab9be3
+		summarizeBy: sum
+		sourceColumn: Calorie - Lunch
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calorie - Dinner'
+		dataType: int64
+		formatString: 0
+		lineageTag: ccc46ba0-ef14-4305-855d-70c2d09b8aaa
+		summarizeBy: sum
+		sourceColumn: Calorie - Dinner
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Calorie'
+		dataType: int64
+		formatString: 0
+		lineageTag: 638a5590-028b-4451-8e98-68fda5acfcb5
+		summarizeBy: sum
+		sourceColumn: Total Calorie
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calorie Limit'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2bd46554-a51a-44de-9235-20764b4c7a9e
+		summarizeBy: sum
+		sourceColumn: Calorie Limit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calorie '
+		dataType: int64
+		formatString: 0
+		lineageTag: 1cce9101-9f48-43d4-afc7-6a03be9abba4
+		summarizeBy: sum
+		sourceColumn: "Calorie "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Above or Below'
+		dataType: string
+		lineageTag: b11f19ae-43eb-47de-abc2-448669fb65da
+		summarizeBy: none
+		sourceColumn: Above or Below
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: d805e4b6-7c61-42dd-8ffc-78e64ff025c7
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Intermediate Client Sheets' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://docs.google.com/spreadsheets/d/e/2PACX-1vRqNjNnNv0PHPPu2RQ2uDBjsuyFM9HckOtEG-qsUWQrCnUWpn8ABW3a6U8LwTktf1Hc7VbV-2Pa6oUQ/pub?output=xlsx"), null, true),
+				    #"Intermediate Client Sheets_Sheet" = Source{[Item="Intermediate Client Sheets",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Intermediate Client Sheets_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Date", type date}, {"Workout Split", type text}, {"ExerciseAS_1", type text}, {"ExerciseAS_2", type text}, {"ExerciseAS_3", type text}, {"ExerciseAS_4", type text}, {"ExerciseAS_5", type text}, {"ExerciseEX_1", type text}, {"ExerciseEX_2", type text}, {"ExerciseEX_3", type text}, {"ExerciseEX_4", type text}, {"ExerciseEX_5", type text}, {"Intensity", type text}, {"Any New PR?", type text}, {"PR Record", type any}, {"Calorie - Breakfast", Int64.Type}, {"Calorie - Lunch", Int64.Type}, {"Calorie - Dinner", Int64.Type}, {"Total Calorie", Int64.Type}, {"Calorie Limit", Int64.Type}, {"Calorie ", Int64.Type}, {"Above or Below", type text}}),
+				    #"Inserted Month" = Table.AddColumn(#"Changed Type", "Month", each Date.Month([Date]), Int64.Type),
+				    #"Extracted Date" = Table.TransformColumns(#"Inserted Month",{})
+				in
+				    #"Extracted Date"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

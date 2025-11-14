@@ -1,0 +1,9 @@
+relationship AutoDetected_f3448798-3f9d-4d30-9cc6-9b58f1c8c613
+	fromColumn: 'Beginner Client Sheets'.Date
+	toColumn: 'Intermediate Client Sheets'.Date
+
+relationship 55b951ba-4f87-4813-bf3d-d8bd26de4981
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Intermediate Client Sheets'.Date
+	toColumn: LocalDateTable_a840f60a-1c5c-4138-8249-2f0bfd9223f7.Date
+

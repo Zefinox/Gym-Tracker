@@ -1,0 +1,152 @@
+table 'Beginner Client Sheets'
+	lineageTag: d692ee6c-1894-4e23-a427-d9e3e377d46b
+
+	column Date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 2609cf0e-4fa8-4114-bd94-0bf1748777f8
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Workout Split'
+		dataType: string
+		lineageTag: 0e237f61-535e-4a87-aa85-5522da9ef71e
+		summarizeBy: none
+		sourceColumn: Workout Split
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mood Identifier (Start)'
+		dataType: int64
+		formatString: 0
+		lineageTag: b8f3a0eb-58ee-4080-a2a2-962dbd2a694b
+		summarizeBy: sum
+		sourceColumn: Mood Identifier (Start)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mood Identifier (End)'
+		dataType: int64
+		formatString: 0
+		lineageTag: ddffb009-d72a-436f-9b95-81a7dd4a243f
+		summarizeBy: sum
+		sourceColumn: Mood Identifier (End)
+
+		annotation SummarizationSetBy = Automatic
+
+	column Intensity
+		dataType: string
+		lineageTag: 0b17709e-65c8-4736-ad66-4a87b2f4902c
+		summarizeBy: none
+		sourceColumn: Intensity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Any New PR?'
+		dataType: string
+		lineageTag: 6d5082fb-a15c-4429-9c99-4384eb63b045
+		summarizeBy: none
+		sourceColumn: Any New PR?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PR Record'
+		dataType: string
+		lineageTag: a0ab991c-3e07-4076-a33e-2d44fece4861
+		summarizeBy: none
+		sourceColumn: PR Record
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calorie - Breakfast'
+		dataType: int64
+		formatString: 0
+		lineageTag: bd3cef56-ce47-4b45-aa5b-396b16c61ce8
+		summarizeBy: sum
+		sourceColumn: Calorie - Breakfast
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calorie - Lunch'
+		dataType: int64
+		formatString: 0
+		lineageTag: 93639469-db9d-47e8-bceb-ca3c357ff453
+		summarizeBy: sum
+		sourceColumn: Calorie - Lunch
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calorie - Dinner'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b9864a9-2764-468e-9f6b-efab34f607f5
+		summarizeBy: sum
+		sourceColumn: Calorie - Dinner
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Calorie'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2f9a21a4-25b1-469b-9974-3fe4fd9aba5d
+		summarizeBy: sum
+		sourceColumn: Total Calorie
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calorie Limit'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f91f996-26e7-4c7a-96c6-c571aa06a4da
+		summarizeBy: sum
+		sourceColumn: Calorie Limit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calorie '
+		dataType: int64
+		formatString: 0
+		lineageTag: 90c47d86-30e9-4d18-906f-fbc0cb8711e7
+		summarizeBy: sum
+		sourceColumn: "Calorie "
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Above or Below'
+		dataType: string
+		lineageTag: b598ae4f-ba3e-4446-9a48-74687ee30078
+		summarizeBy: none
+		sourceColumn: Above or Below
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: 369d82a7-ff5f-45a9-af32-a6c554d3ff59
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Beginner Client Sheets' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(Web.Contents("https://docs.google.com/spreadsheets/d/e/2PACX-1vRqNjNnNv0PHPPu2RQ2uDBjsuyFM9HckOtEG-qsUWQrCnUWpn8ABW3a6U8LwTktf1Hc7VbV-2Pa6oUQ/pub?output=xlsx"), null, true),
+				    #"Beginner Client Sheets_Sheet" = Source{[Item="Beginner Client Sheets",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Beginner Client Sheets_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Date", type date}, {"Workout Split", type text}, {"Mood Identifier (Start)", Int64.Type}, {"Mood Identifier (End)", Int64.Type}, {"Intensity", type text}, {"Any New PR?", type text}, {"PR Record", type any}, {"Calorie - Breakfast", Int64.Type}, {"Calorie - Lunch", Int64.Type}, {"Calorie - Dinner", Int64.Type}, {"Total Calorie", Int64.Type}, {"Calorie Limit", Int64.Type}, {"Calorie ", Int64.Type}, {"Above or Below", type text}}),
+				    #"Inserted Month" = Table.AddColumn(#"Changed Type", "Month", each Date.Month([Date]), Int64.Type),
+				    #"Extracted Date" = Table.TransformColumns(#"Inserted Month",{})
+				in
+				    #"Extracted Date"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

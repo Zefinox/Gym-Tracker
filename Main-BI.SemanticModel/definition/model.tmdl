@@ -1,0 +1,21 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-PH
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Beginner Client Sheets","Intermediate Client Sheets"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Beginner Client Sheets'
+ref table 'Intermediate Client Sheets'
+ref table DateTableTemplate_52a4b0fe-cfa7-49ec-b8bf-d7781b9d59aa
+ref table LocalDateTable_a840f60a-1c5c-4138-8249-2f0bfd9223f7
+
+ref cultureInfo en-US
+
